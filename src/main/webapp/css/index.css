@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.container {
+	width: 25%;
+	max-width: 500px;
+	background: #D3D3D3;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+}
+
+.title {
+	margin-top: 25px;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+}
+
+.login_fields {
+	margin: 25px 0;
+}
+
+p{
+	margin-bottom: 6px;
+}
+
+input {
+	outline: none;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background-color: #fff;
+	color: #000000;
+}
+
+.field_password {
+	margin-top: 25px;
+}
+
+.field_workspace {
+	margin-top: 25px;
+}
+
+.hide_show_password_container {
+	margin-bottom: 25px;
+}
+
+.login_container {
+	margin-bottom: 25px;
+}
+
+.btn_login {
+	color: #fff;
+	background-color: #0061C2;
+	padding: 10px 50px;
+	border: none;
+	border-radius: 3px;
+	transition: .2s;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+}
+
+/*ANIMATIONS*/
+
+.btn_login:hover {
+	transition: .2s;
+	padding: 10px 50px;
+	background-color: #006CD8;
+	color: #fff;
+	border: none;
+}
+
+input:hover{
+	outline: 1px solid #000000;
+}
+
+
+input:focus{
+	outline: 2px solid #000000;
+}
