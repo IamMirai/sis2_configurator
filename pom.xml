@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>es.netaphora</groupId>
-  <artifactId>SiS2</artifactId>
+  <artifactId>SIS2_CONFIGURATOR</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>SiS2 Maven Webapp</name>
+  <name>SIS2_CONFIGURATOR Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -34,7 +34,13 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.6.0</version>
 		</dependency>
-
+		
+		<!--https://mvnrepository.com/artifact/org.checkerframework/checker-qual -->
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>checker-qual</artifactId>
+			<version>3.31.0</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
