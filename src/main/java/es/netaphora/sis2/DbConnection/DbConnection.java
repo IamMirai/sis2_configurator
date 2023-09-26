@@ -35,6 +35,7 @@ public class DbConnection {
 	//CODE
 	public Connection openConnection() {
         try {
+        	Class.forName("org.postgresql.Driver");
         	setupDBCredentials();
         	
         	LOGGER.info("Trying DB connection to " + url + " with user: " + user);
@@ -43,7 +44,10 @@ public class DbConnection {
         } catch (SQLException ex) {
         	LOGGER.error("Connection failed to " + url);
         	ex.printStackTrace();
-        }
+        } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return connectionToOpen;
     }
 

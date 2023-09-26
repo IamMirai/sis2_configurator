@@ -9,6 +9,6 @@
 	</head>
 	<body>
 		<h2>Param:</h2>
-		<p>User: <%out.println("user: " + request.getParameter("user"));%></p>
+		<p>User: <%=request.getParameter("user")%></p>
 	</body>
 </html>
