@@ -61,6 +61,7 @@ public class DbConnection {
         	if(connectionToClose != null) {
         		LOGGER.info("Tying to close DB connection to " + url);
         		connectionToClose.close();
+        		LOGGER.info("DB Connection closed succesfully to " + url);
         	}
         	
         } catch (SQLException ex) {
