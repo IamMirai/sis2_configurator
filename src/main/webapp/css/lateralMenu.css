@@ -1,0 +1,137 @@
+@import 'global.css';
+
+/*========== MENU ==========*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.flex_container{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+nav{
+	top: 0px;
+	left: 0px;
+	width: 230px;
+	height: 420px;
+	border-radius: 5px;
+	margin: 50px 25px;
+	background-color: var(--primary-background-container-color);
+	overflow-y: visible;
+}
+
+nav .menu_list{
+	width: 100%;
+	height: 100%;
+	transition: margin-top .2s ease-in-out;
+}
+
+nav .menu_list .menu_item{
+	position: relative;
+}
+
+nav .menu_list .menu_item a{
+	padding: 5px 30px;
+	line-height: 60px;
+	display: block;
+	color: var(--black-color);
+	background-color: var(--primary-background-container-color);
+	font-family: var(--body-font);
+	font-size: var(--small-font-size);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+nav .menu_list .menu_item i{
+	margin-right: 10px;
+}
+
+nav .menu_list .menu_item .dropdown{
+	position: absolute;
+	right: 0;
+	margin: 26px;
+	transition: transform .2s ease-in-out;
+}
+
+nav .menu_list .menu_item .submenu{
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height .2s ease-in-out;
+}
+
+nav .menu_list .menu_item .submenu.active{
+	max-height: 210px;
+}
+
+nav .menu_list .menu_item .submenu a{
+	background-color: var(--secondary-background-container-color);
+	padding: 5px 0 0 65px;
+}
+
+nav .menu_list .menu_item .submenu .disabled{
+	color: var(--disabled-item-color);
+	cursor: default;
+}
+
+nav .menu_list .menu_item .submenu .disabled i{
+	transition: .2s;
+	margin-left: 23px;
+	cursor: pointer;
+	color: var(--disabled-item-color);
+}
+
+.tooltip {
+	visibility: hidden;
+	margin-left: 30px;
+	padding-left: 10px;
+	width: 200px;
+	background-color: var(--primary-background-container-color);
+	color: var(--black-color);
+	text-align: left;
+	line-height: 30px;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 1;
+}
+
+.tooltip.visible{
+	visibility: visible;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent var(--primary-background-container-color) transparent transparent;
+}
+
+.languages{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+button{
+	width: 25%;
+}
+
+/*========== MENU ACTIONS ==========*/
+nav .menu_list .menu_item a:not(.disabled):hover{
+	color: var(--white-color);
+	background-color: var(--green-color);
+	transition: .2s ease-in-out;
+}
+
+nav .menu_list .menu_item .submenu .disabled i:hover{
+	color: var(--black-color);
+}

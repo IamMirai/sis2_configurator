@@ -1,0 +1,192 @@
+@import 'global.css';
+
+main{
+	margin: 50px 25px;
+	width: 77.5%;
+	height: 470px;
+	border-radius: 5px;
+	background-color: var(--primary-background-container-color);
+	font-family: var(--body-font);
+}
+
+.language_title{
+	margin: 25px 25px;
+}
+
+.container{
+	width: 93.5%;
+	height: 80%;
+	margin: 25px 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--secondary-background-container-color); 
+}
+
+.list_title{
+	padding: 25px 25px;
+}
+
+.list_container{
+	width: 34%;
+	height: 75%;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary-background-container-color);
+}
+
+.language_list_item{
+	line-height: 50px;
+	padding: 10px;
+	list-style: none;
+	cursor: pointer;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.list_options{
+	width: 50%;
+	height: 66%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+
+}
+
+.list_option{
+	display: flex;
+	justify-content: flex-start;
+    /*background-color: var(--primary-background-container-color);
+	color: var(--black-color);
+	padding: 10px 20px;
+	border-radius: 5px;*/
+}
+
+.button_add{
+	width: 100%;
+	height: 100%;
+	padding: 10px 30px;
+	border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-background-container-color);
+	color: var(--black-color);
+}
+
+.button_add:disabled{
+	opacity: 0.5;
+	cursor: default;
+}
+
+.button_remove{
+    width: 100%;
+	height: 100%;
+	padding: 10px 30px;
+	border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-background-container-color);
+	color: var(--black-color);
+}
+
+.button_remove:disabled{
+	opacity: 0.5;
+	cursor: default;
+}
+
+button{
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+}
+
+.background_modal{
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 60%;
+    background-color: #FFFFFF;
+}
+
+.languages_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.all_language_list_item{
+	display: inline-block;
+	list-style: none;
+	padding: 8px 10px;
+	margin: 8px 40px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.modal_options{
+	width: 50%;
+	height: 22%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+
+}
+
+.option{
+	display: flex;
+	justify-content: flex-start;
+}
+
+.button_accept{
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-background-container-color);
+	color: var(--black-color);
+}
+
+.button_accept:disabled{
+	opacity: 0.5;
+	cursor: default;
+}
+
+.button_cancel{
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-background-container-color);
+	color: var(--black-color);
+}
+
+
+/*========== EVENTS ==========*/
+

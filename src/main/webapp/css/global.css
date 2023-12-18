@@ -1,0 +1,24 @@
+/*========== VARIABLES CSS ==========*/
+:root {
+  /*========== Colors ==========*/
+  --green-color: #1c8942;
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+  --primary-background-container-color: #E7E7E7;
+  --secondary-background-container-color: #DDDDDD;
+  --disabled-item-color: rgba(0, 0, 0, 0.5);
+  /*========== Font and typography ==========*/
+  --normal-font-size: 14px;
+  --small-font-size: 12px;
+  --body-font: sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	width: 100%;
+  	height: 100%;
+}

@@ -1,7 +1,9 @@
 var btn_hide_show_password = document.querySelector('.btn_hide_show_password');
 
-btn_hide_show_password.addEventListener('click', function() {
-
+btn_hide_show_password.addEventListener('click', function(event) {
+	
+	event.preventDefault();
+	
 	var input_password = document.querySelector('.input_password');
 
 	if (input_password.type === 'password') {
