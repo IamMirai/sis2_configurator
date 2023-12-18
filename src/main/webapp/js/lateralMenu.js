@@ -38,8 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			
 			var subMenu = this.nextElementSibling;
 			
-			console.log(subMenu);
-			
 			dropdown = this.querySelector('.dropdown');
 			
 			if(dropdown.style.transform === 'rotate(0deg)'){
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 			if(openedMenu != null){
 				if (openedMenu.classList[1] !== subMenu.classList[1]) {
-						console.log("He entrado 1");
 						openMenuDropdown.style.transform = 'rotate(0deg)';
 						
 						openedMenu.classList.remove('active');
@@ -62,10 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 			
 			if(subMenu.classList[1] == null){
-				console.log("He entrado 2");
 				subMenu.classList.add('active');
 			}else{
-				console.log("He entrado 3");
 				subMenu.classList.remove('active');
 				if(tooltip != null){
 					tooltip.classList.remove('visible');
@@ -73,8 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 			
 			openedMenu = subMenu.classList[1] === null ? null : subMenu;
-			
-			console.log(openedMenu);
 
 			openMenuDropdown = dropdown;
 			

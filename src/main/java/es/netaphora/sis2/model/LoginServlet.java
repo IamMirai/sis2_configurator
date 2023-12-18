@@ -77,43 +77,18 @@ public class LoginServlet extends HttpServlet {
 				
 				activeWorkspace = getWorkspaceVerification(connection, preparedStatement, resultSet, workspace, infoWorkspace, cont, out, session);
 			}
-			
+
 			if(activeWorkspace) {
 				preparedStatement = connection.prepareStatement(languages);
 				resultSet = preparedStatement.executeQuery();
 				
-				getLanguages(resultSet, request);
-				
 				preparedStatement = connection.prepareStatement(viewLanguageLiterals);
-				
-				if(session.getAttribute("language") == null) {
-					language = "eng";
-					
-					session.setAttribute("language", language);
-					
-					preparedStatement.setString(1, language);
-					
-				}else {
-					
-					if((String) request.getParameter("language") == null) {
-						
-						preparedStatement.setString(1, (String) session.getAttribute("language"));
-						
-					}else {
-						
-						if(session.getAttribute("language").equals((String) request.getParameter("language"))) {
-							
-							preparedStatement.setString(1, language);
-							
-						}else{
-							language = (String) request.getParameter("language");
-							
-							session.setAttribute("language", language);
-							
-							preparedStatement.setString(1, language);
-						}
-					}
-				}
+
+				language = "eng";
+
+				session.setAttribute("language", language);
+
+				preparedStatement.setString(1, language);
 				
 				resultSet = preparedStatement.executeQuery();
 	          
@@ -136,27 +111,6 @@ public class LoginServlet extends HttpServlet {
 			ex.printStackTrace();
 		}     
     }
-	
-	
-	private void getLanguages(ResultSet resultSet, HttpServletRequest request) {
-		try {
-			Map<String, String> languages = new TreeMap<>();
-
-			while (resultSet.next()) {
-				Locale[] availableLocales = Locale.getAvailableLocales();
-
-				for (Locale locale : availableLocales) {
-					if (resultSet.getString(1).equals(locale.getISO3Language())) {
-						languages.put(resultSet.getString(1), locale.getDisplayLanguage(Locale.ENGLISH));
-					}
-				}
-			}
-			request.setAttribute("languages", languages);
-
-		} catch (SQLException ex) {
-			LOGGER.error("Failed to execute SQL Statement");
-		}
-	}
 
 
 	private Boolean getWorkspaceVerification(Connection connection, PreparedStatement preparedStatement, ResultSet resultSet, String workspace, String infoWorkspace, Integer cont, PrintWriter out, HttpSession session) {
@@ -175,7 +129,8 @@ public class LoginServlet extends HttpServlet {
 					
 					String ws_title = resultSet.getString(1);
 					String ws_subtitle = resultSet.getString(2);
-					
+
+					session.setAttribute("workspace", workspace);
 					session.setAttribute("ws_title", ws_title);
 					session.setAttribute("ws_subtitle", ws_subtitle);
 				}else {

@@ -19,14 +19,6 @@
 		<title>SIS2 | CONFIGURATOR</title>
 	</head>
 	<body>
-	 	<div class="languages">
-	 	<%
-	 	Map<String, String> languages = (TreeMap<String, String>)request.getAttribute("languages");
-	 	%>
-		 	<button class="language e"><%=languages.get("eng")%></button>
-		 	<button class="language s"><%=languages.get("spa")%></button>
-	 	</div>
-	 	
 	 	<a class="" href="<%=request.getContextPath()%>/jsp/logout.jsp">Log out</a>
 	 	
 		<script src="<%=request.getContextPath()%>/js/configurator.js"></script>

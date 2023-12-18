@@ -14,4 +14,21 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>LanguagesServlet</display-name>
+    <servlet-name>LanguagesServlet</servlet-name>
+    <servlet-class>es.netaphora.sis2.model.LanguagesServlet</servlet-class>
+    <init-param>
+      <param-name>allowedMethods</param-name>
+      <param-value>DELETE</param-value>
+      <param-value>PUT</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LanguagesServlet</servlet-name>
+    <url-pattern>/LanguagesServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
+

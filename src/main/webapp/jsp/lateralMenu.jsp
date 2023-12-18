@@ -47,7 +47,7 @@
 			 						if(treeMap_menu_sub_items.get(subMenuKey).get(4).equals(treeMap_menu_items.get(menuKey).get(2))){
 			 							if(Boolean.parseBoolean(treeMap_menu_sub_items.get(subMenuKey).get(3)) == true){
 			 					%>
-		 						<a class="submenu_item" href="<%=request.getContextPath() + treeMap_menu_sub_items.get(subMenuKey).get(6)%>"><%=treeMap_menu_sub_items.get(subMenuKey).get(1)%></a>	
+		 						<a class="submenu_item" href="<%=treeMap_menu_sub_items.get(subMenuKey).get(6)%>"><%=treeMap_menu_sub_items.get(subMenuKey).get(1)%></a>
 		 						<%		
 		 								}else{
 		 						%>
