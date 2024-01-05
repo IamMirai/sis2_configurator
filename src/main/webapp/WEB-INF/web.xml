@@ -41,5 +41,16 @@
     <servlet-name>wsColorsServlet</servlet-name>
     <url-pattern>/wsColorsServlet</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>EmailsServlet</display-name>
+    <servlet-name>EmailsServlet</servlet-name>
+    <servlet-class>es.netaphora.sis2.model.EmailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmailsServlet</servlet-name>
+    <url-pattern>/EmailsServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
 

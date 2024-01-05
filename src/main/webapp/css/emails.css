@@ -1,0 +1,100 @@
+@import 'global.css';
+
+main{
+	margin: 50px 25px;
+	width: 77.5%;
+	height: 675px;
+	border-radius: 5px;
+	background-color: var(--primary-background-container-color);
+	font-family: var(--body-font);
+}
+
+.ws-email-config__title{
+	margin: 25px 25px;
+}
+
+.ws-email-config__container{
+	width: 93.5%;
+	height: 80%;
+	margin: 25px 25px;
+	padding: 25px 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	background-color: var(--secondary-background-container-color);
+}
+
+.ws-email-config__default-email-details__container{
+    width: 100%;
+    height: 6%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ws-email-config__output{
+	color: var(--red-color);
+}
+
+.ws-email-config__default-email-details__subcontainer-text{
+	height: 5%;
+	display: flex;
+    margin-right: 10px;
+}
+
+.ws-email-config__default-email-details__subcontainer-value{
+    height: 5%;
+	display: flex;
+    margin-right: 5px;
+}
+
+.ws-email-config__default-email-details__subcontainer-value__email-input{
+	width: 200px;
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.ws-email-config__default-email-details__subcontainer-button{
+	height: 4%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.ws-email-config__default-email-details__subcontainer-button__button-change{
+    text-decoration: underline;
+    color: rgb(30, 95, 216);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.ws-email-config__default-email-details__subcontainer-button__options__container{
+	display: flex;
+	flex-direction: row;
+}
+
+.confirm{
+	width: 20px;
+	height: 20px;
+	border-radius: 3px;
+	display: flex;
+	color: var(--white-color);
+	background-color: var(--green-color);
+	justify-content: center;
+	align-items: center;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.cancel{
+	width: 20px;
+	height: 20px;
+	border-radius: 3px;
+	display: flex;
+	color: var(--white-color);
+	background-color: var(--red-color);
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
