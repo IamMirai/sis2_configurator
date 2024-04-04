@@ -31,7 +31,7 @@ public class LanguagesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response){
 
-        final String workspaceLanguages = "SELECT fk_language, default_language FROM tb_config_ws_languages WHERE fk_workspace = ? ORDER BY pkid_internal ASC";
+        final String workspaceLanguages = "SELECT fk_language FROM tb_config_ws_languages WHERE fk_workspace = ? ORDER BY pkid_internal ASC";
 
         final String languagesNotInWorkspace = "SELECT ls.pk_language FROM tb_languages ls LEFT JOIN TB_CONFIG_WS_LANGUAGES cwls ON ls.pk_language = cwls.fk_language and cwls.fk_workspace = ? WHERE cwls.fk_language IS NULL ORDER BY ls.pk_language ASC";
 
@@ -213,7 +213,7 @@ public class LanguagesServlet extends HttpServlet {
 
                 arrayList_language = getLanguageNameByIsoCode(resultSet.getString(1));
 
-                arrayList_language.add(resultSet.getString(2));
+                arrayList_language.add(resultSet.getString(1));
 
                 treeMap_languages.put(cont, arrayList_language);
                 cont++;

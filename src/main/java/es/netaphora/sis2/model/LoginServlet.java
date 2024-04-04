@@ -38,10 +38,10 @@ public class LoginServlet extends HttpServlet {
 		
 		final String verifyWorkspace = "SELECT pkid_internal, ws_purpose FROM tb_workspaces WHERE pkid_internal = ?";
         
-		final String infoWorkspace = "SELECT ws_title, ws_subtitle FROM tb_config_ws_ui_data WHERE pkid_internal = ?";
+		final String infoWorkspace = "SELECT ws_title, ws_subtitle FROM tb_config_ws_ui_data WHERE fk_workspace = ?";
         
-		final String viewLanguageLiterals = "SELECT l.id_field_literal, l.field_literal, cfgm.menu_id, cfgm.f_available, cfgm.fk_config_menus, cfgm.fk_literals, cfgm.menu_url FROM tb_literals l LEFT JOIN tb_config_menus cfgm ON l.id_field_literal = cfgm.fk_literals WHERE l.fk_language = ? and (cfgm.f_available = true or l.id_view = 'a1') ORDER BY LENGTH(id_field_literal), id_field_literal";
-        
+		final String viewLanguageLiterals = "SELECT el.pkid_internal, el.literal_config_menu, cfgm.menu_id, cfgm.f_available, cfgm.fk_config_menus, cfgm.fk_config_menus_literals, cfgm.menu_url FROM tb_config_menus_literals el LEFT JOIN tb_config_menus cfgm ON el.pkid_internal = cfgm.fk_config_menus_literals WHERE (cfgm.f_available = true or el.id_view = 'a1') AND el.fk_language = ? ORDER BY LENGTH(pkid_internal), pkid_internal";
+
 		final String languages = "SELECT pk_language FROM TB_LANGUAGES WHERE f_available";
 		
 		HttpSession session = request.getSession();
@@ -69,7 +69,7 @@ public class LoginServlet extends HttpServlet {
 			
 			if(session.isNew()) {
 				
-	            String workspace = request.getParameter("workspace");
+				String workspace = request.getParameter("workspace");
 
 	            preparedStatement = connection.prepareStatement(verifyWorkspace);
 				preparedStatement.setString(1, workspace);
